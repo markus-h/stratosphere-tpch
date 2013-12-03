@@ -49,6 +49,7 @@ object TPCHQuery {
     case 1 => Option(new TPCHQuery01(c.dop, c.inPath, c.outPath, c.delta))
     case 2 => Option(new TPCHQuery02(c.dop, c.inPath, c.outPath, c.sizes(0), c.ptype, c.region))
     case 3 => Option(new TPCHQuery03(c.dop, c.inPath, c.outPath, c.segment, string2date(c.date)))
+    case 12 => Option(new TPCHQuery12(c.dop, c.inPath, c.outPath, c.shipmodes, string2date(c.date)))
     case _ => Option(null)
   }
 }

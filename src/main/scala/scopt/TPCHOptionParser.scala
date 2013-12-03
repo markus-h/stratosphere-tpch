@@ -175,7 +175,7 @@ class TPCHOptionParser extends OptionParser[TPCHConfig]("stratosphere-tpch") {
           .action { (x, c) => c.copy(shipmodes = List(x)) }
           .text("TPC-H query parameter"),
         arg[String]("[shipmode2]")
-          .action { (x, c) => c.copy(shipmodes = List(x)) }
+          .action { (x, c) => c.copy(shipmodes = c.shipmodes :+ x) }
           .text("TPC-H query parameter"),
         arg[String]("[date]")
           .action { (x, c) => c.copy(date = x) }
